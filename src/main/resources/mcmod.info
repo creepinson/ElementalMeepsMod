@@ -1,0 +1,16 @@
+[
+{
+  "modid": "meeprtek",
+  "name": "Meeper Tek",
+  "description": "My first tech mod...",
+  "version": "1.0.0",
+  "mcversion": "1.11.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Creepinson"],
+  "credits": "The Forge and FML guys, for making this mod possible to make!",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

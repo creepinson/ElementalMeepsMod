@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=east": { "model": "meeprtek:momo", "y": 90, "z": 0 },
+        "facing=west": { "model": "meeprtek:momo", "y": 270, "z": 0 },
+        "facing=north": { "model": "meeprtek:momo", "y": 0, "z": 0 },
+        "facing=south": { "model": "meeprtek:momo", "y": 180, "z": 0 }
+    }
+}

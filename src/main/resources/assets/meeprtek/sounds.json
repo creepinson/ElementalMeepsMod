@@ -1,0 +1,4 @@
+{
+"siliconepress.press.long": {"category": "master","sounds": [{"name": "meeprtek:press_silicone/siliconepress_press","stream": false}]},
+"siliconepress.press.short": {"category": "master","sounds": [{"name": "meeprtek:press_silicone/siliconepress.press.shortsiliconepress_press_short","stream": false}]},
+}
