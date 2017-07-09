@@ -63,10 +63,10 @@ public class ClientProxy extends CommonProxy {
 			keyBindings = new KeyBinding[4]; 
 			  
 			// instantiate the key bindings
-			keyBindings[0] = new KeyBinding("key.meeprtek.mobspawner", Keyboard.KEY_GRAVE, "key.meeprtek.gui");
-			keyBindings[1] = new KeyBinding("key.meeprtek.disguisepig", Keyboard.KEY_DOWN, "key.meeprtek.render");
-			keyBindings[2] = new KeyBinding("key.meeprtek.disguisecreeper", Keyboard.KEY_UP, "key.meeprtek.render");
-			keyBindings[3] = new KeyBinding("key.meeprtek.undisguiseplayer", Keyboard.KEY_P, "key.meeprtek.render");
+			keyBindings[0] = new KeyBinding("key.elementalmeeps.mobspawner", Keyboard.KEY_GRAVE, "key.elementalmeeps.gui");
+			keyBindings[1] = new KeyBinding("key.elementalmeeps.disguisepig", Keyboard.KEY_DOWN, "key.elementalmeeps.render");
+			keyBindings[2] = new KeyBinding("key.elementalmeeps.disguisecreeper", Keyboard.KEY_UP, "key.elementalmeeps.render");
+			keyBindings[3] = new KeyBinding("key.elementalmeeps.undisguiseplayer", Keyboard.KEY_P, "key.elementalmeeps.render");
 		    	    
 			// register all the key bindings
 			for (int i = 0; i < keyBindings.length; ++i) 

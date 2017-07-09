@@ -9,7 +9,7 @@ public class Utils {
 	public static RenderHelper rh = new RenderHelper();
 
 //MAIN MOD STUFF
-    public static final String MODID = "meeprtek";
+    public static final String MODID = "elementalmeeps";
     public static final String VERSION = "Meeping-Alpha";
  
     public static final String SEVERPROXY = "me.creepinson.lib.proxy.CommonProxy";
