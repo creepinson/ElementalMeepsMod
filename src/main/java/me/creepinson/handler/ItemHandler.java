@@ -2,11 +2,9 @@ package me.creepinson.handler;
 
 
 import me.creepinson.handler.EnumHandler.CrappedWandTypes;
-import me.creepinson.item.ItemCrappedWand;
 import me.creepinson.lib.util.Utils;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -17,26 +15,21 @@ public class ItemHandler {
 	
 	
 	public static void init(){
-		
-		crappedWand = new ItemCrappedWand("meeprwand", "meeprwand");
-		
-		
+
+
+
 		
 	}
 	
 	
 	public static void register(){
 		
-		registerItem(crappedWand);
+
 		
 	}
 	
 	public static void registerRenders(){
-		
-		 for(int i = 0; i < CrappedWandTypes.values().length; i++)
-			{
-	    	  registerRender(crappedWand, i, EnumHandler.CrappedWandTypes.values()[i].getName() + "wand");
-			}
+
 		
 	}
 	

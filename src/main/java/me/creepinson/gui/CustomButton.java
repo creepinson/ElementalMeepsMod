@@ -5,11 +5,13 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.renderer.GlStateManager;
 
-public class GuiDisguiseButton extends GuiButton {
+import java.awt.*;
 
-	public GuiDisguiseButton(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText) {
+public class CustomButton extends GuiButton {
+    protected Color color;
+	public CustomButton(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText, Color color) {
 		super(buttonId, x, y, widthIn, heightIn, buttonText);
-		
+		this.color = color;
 	}
 
     public void drawButton(Minecraft mc, int mouseX, int mouseY)
@@ -18,7 +20,7 @@ public class GuiDisguiseButton extends GuiButton {
         {
             FontRenderer fontrenderer = mc.fontRendererObj;
             mc.getTextureManager().bindTexture(BUTTON_TEXTURES);
-            GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+            GlStateManager.color(color.getRed(), color.getGreen(), color.getBlue(), 1);
             this.hovered = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width && mouseY < this.yPosition + this.height;
             int i = this.getHoverState(this.hovered);
             GlStateManager.enableBlend();

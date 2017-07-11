@@ -1,18 +1,14 @@
 package me.creepinson.core;
 import java.util.Random;
 
-import me.creepinson.entity.EntityMovingBlock;
 import me.creepinson.handler.BlockHandler;
 import me.creepinson.handler.ItemHandler;
 import me.creepinson.handler.KeysHandler;
 import me.creepinson.lib.proxy.CommonProxy;
 import me.creepinson.lib.util.Utils;
-import me.creepinson.render.particle.ParticleHandler;
-import net.minecraft.client.Minecraft;
-import net.minecraft.util.ResourceLocation;
+
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -21,14 +17,13 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 @Mod(modid = Utils.MODID, version = Utils.VERSION)
-public class MeeperTek
+public class ElementalMeeps
 {
 	@SidedProxy(serverSide = Utils.SEVERPROXY, clientSide = Utils.CLIENTPROXY)
 public static CommonProxy proxy;
-public static ParticleHandler ph = new ParticleHandler();
 public int movingBlockID;
 @Mod.Instance(Utils.MODID)
-public static MeeperTek instance;
+public static ElementalMeeps instance;
  
     
     @EventHandler
@@ -45,7 +40,7 @@ public static MeeperTek instance;
     
     	proxy.preInit();
     	proxy.registerRenderers();
-    	registerEntity(EntityMovingBlock.class, "walkingblock", 0, (0 << 16) + (255 << 8) + 51, (204 << 16) + (0 << 8) + 0);
+
     }
 
     @EventHandler
@@ -77,7 +72,7 @@ public static MeeperTek instance;
     int primaryColor = rand.nextInt() * 16777215;
     int secondaryColor = rand.nextInt() * 16777215;
 
-    EntityRegistry.registerModEntity(new ResourceLocation(Utils.MODID, name), entityClass, name, ID, instance, 64, 10, true, color1, color2);
+    EntityRegistry.registerModEntity(entityClass, name, ID, instance, 64, 10, true, color1, color2);
     }
     public static void registerEntityNoEgg(Class entityClass, String name, int ID){
         
@@ -87,7 +82,7 @@ public static MeeperTek instance;
         int primaryColor = rand.nextInt() * 16777215;
         int secondaryColor = rand.nextInt() * 16777215;
 
-        EntityRegistry.registerModEntity(new ResourceLocation(Utils.MODID, name), entityClass, name, ID, instance, 64, 10, true);
+        EntityRegistry.registerModEntity(entityClass, name, ID, instance, 64, 10, true);
 
 	}
     

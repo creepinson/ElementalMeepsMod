@@ -2,24 +2,13 @@ package me.creepinson.lib.proxy;
 
 import org.lwjgl.input.Keyboard;
 
-import me.creepinson.core.MeeperTek;
-import me.creepinson.entity.EntityMovingBlock;
-import me.creepinson.entity.render.RenderMovingBlock;
 import me.creepinson.handler.BlockHandler;
 import me.creepinson.handler.ItemHandler;
-import me.creepinson.render.disguise.RenderDisguises;
-import me.creepinson.tileentity.TECreepinoSkull;
-import me.creepinson.tileentity.render.TESRCreepinoSkull;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.settings.KeyBinding;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
-import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
- 
+
 public class ClientProxy extends CommonProxy {
 	
 	public static KeyBinding[] keyBindings;
@@ -45,11 +34,6 @@ public class ClientProxy extends CommonProxy {
 
 	public void init() {
 		  super.init();
-		  ClientRegistry.bindTileEntitySpecialRenderer(TECreepinoSkull.class, new TESRCreepinoSkull());
-
-			RenderingRegistry.registerEntityRenderingHandler(EntityMovingBlock.class,
-					new RenderMovingBlock(Minecraft.getMinecraft().getRenderManager()));
-
 
 
 

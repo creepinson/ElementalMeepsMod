@@ -1,8 +1,6 @@
 package me.creepinson.handler;
 
-import me.creepinson.core.MeeperTek;
 import me.creepinson.lib.proxy.ClientProxy;
-import me.creepinson.lib.util.render.RenderHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,7 +15,7 @@ public class KeysHandler {
 	@SubscribeEvent(priority=EventPriority.NORMAL, receiveCanceled=true)
 	public void onEvent(KeyInputEvent event)
 	{
-	EntityPlayer player	= Minecraft.getMinecraft().player;
+	EntityPlayer player	= Minecraft.getMinecraft().thePlayer;
 	 
 	    KeyBinding[] keyBindings = ClientProxy.keyBindings;
 	   

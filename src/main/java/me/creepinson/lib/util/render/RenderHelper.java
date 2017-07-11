@@ -2,7 +2,6 @@ package me.creepinson.lib.util.render;
 
 import me.creepinson.lib.util.Utils;
 import me.creepinson.lib.util.stuff.Meepon;
-import me.creepinson.render.disguise.RenderDisguises;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;

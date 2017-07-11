@@ -3,8 +3,6 @@ package me.creepinson.handler.event;
 import me.creepinson.lib.util.Utils;
 import me.creepinson.lib.util.render.RenderHelper;
 import me.creepinson.lib.util.stuff.Meepon;
-import me.creepinson.render.disguise.RenderDisguises;
-import me.creepinson.render.particle.MoppityTextures;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -34,23 +32,8 @@ import java.awt.*;
 
 public class EventHandler {
 
-    @SideOnly(Side.CLIENT)
-    @SubscribeEvent
-    public void onTextureStitch(TextureStitchEvent event) {
-        event.getMap().registerSprite(MoppityTextures.moppityAura);
-        event.getMap().registerSprite(MoppityTextures.spark);
-    }
-
-    @SubscribeEvent
-    public void renderBlockPlayer(RenderPlayerEvent.Pre event) {
-
-        EntityPlayer player = event.getEntityPlayer();
-
-        event.setCanceled(true);
-
-        Utils.rh.currentBlock = new Meepon(Blocks.CLAY.getDefaultState(), player.getEntityWorld());
-        Utils.rh.currentBlock.render(new BlockPos(0,0,0));
 
 
-    }
+
+
 }

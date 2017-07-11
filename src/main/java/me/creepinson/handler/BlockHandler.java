@@ -1,10 +1,11 @@
 package me.creepinson.handler;
 
 
-import me.creepinson.block.CreepinoSkull;
+import me.creepinson.block.ComputerCore;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.model.ModelLoader;
@@ -17,8 +18,8 @@ public class BlockHandler {
 
 	public static void init() {
 
-		BlockMobChamberCore = new CreepinoSkull(Material.ROCK, "momo",
-				CreativeTabHandler.MEEPR_BLOCKS, 5F, 15F, 3, "pickaxe");
+		BlockMobChamberCore = new ComputerCore(Material.ROCK, "computercore",
+				CreativeTabs.MISC, 5F, 15F, 3, "pickaxe");
 
 		
 	}
