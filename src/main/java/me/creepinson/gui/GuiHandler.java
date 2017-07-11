@@ -10,26 +10,24 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 /**
  * Created by Creepinson on 7/10/2017.
  */
-public class GuiHandler implements IGuiHandler
-{
+public class GuiHandler implements IGuiHandler {
 
 
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 
-            return null;
+        return null;
     }
 
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 
-        if(ID == 0){
+        if (ID == 0) {
 
 
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
 
-            TileEntity tileEntity = player.worldObj.getTileEntity(new BlockPos(x, y, z));
-
-            if(tileEntity instanceof TileComputerCore)
+            if (tileEntity instanceof TileComputerCore)
 
             {
 

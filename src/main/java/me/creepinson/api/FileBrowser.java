@@ -22,13 +22,14 @@ public class FileBrowser extends GuiComponent {
 
     public FileBrowser(FileSystem fileSystem, Gui parent, int x, int y) {
         super("File Browser", x,y, parent);
-        this.width = 123;
-        this.height = 82;
+        this.width = 124;
+        this.height = 83;
         this.x = x;
         this.y = y;
         this.parentGui = parent;
         this.fileSystem = fileSystem;
         init();
+
     }
 
     public void init(){

@@ -1,6 +1,7 @@
 package me.creepinson.core;
 import java.util.Random;
 
+import me.creepinson.gui.GuiHandler;
 import me.creepinson.handler.BlockHandler;
 import me.creepinson.handler.ItemHandler;
 import me.creepinson.handler.KeysHandler;
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 @Mod(modid = Utils.MODID, version = Utils.VERSION)
 public class ElementalMeeps
@@ -23,7 +25,7 @@ public class ElementalMeeps
 public static CommonProxy proxy;
 public int movingBlockID;
 @Mod.Instance(Utils.MODID)
-public static ElementalMeeps instance;
+public static ElementalMeeps instance = new ElementalMeeps();
  
     
     @EventHandler
@@ -50,7 +52,12 @@ public static ElementalMeeps instance;
     	Utils.getLogger().info("Init");
     	MinecraftForge.EVENT_BUS.register(new me.creepinson.handler.event.EventHandler());
     	MinecraftForge.EVENT_BUS.register(new KeysHandler());
+
+        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
+
+
     	proxy.init();
+
 
     }
     

@@ -6,10 +6,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.scene.control.TextFormatter;
 import me.creepinson.api.*;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import org.lwjgl.input.Keyboard;
 
 import me.creepinson.lib.util.Utils;
@@ -28,7 +31,7 @@ public class Computer extends GuiScreen {
 
     public static GuiSliderFixed type;
 
-    public User currentUser;
+    public String currentUser;
     private int x, y, z;
     private NBTTagCompound fileData;
     private NBTTagCompound systemData;
@@ -37,7 +40,6 @@ public class Computer extends GuiScreen {
     public Computer(NBTTagCompound data, int x, int y, int z) {
         this.fileData = data.getCompoundTag("files");
         this.systemData = data.getCompoundTag("system");
-        this.currentUser = new User(fileSystem);
         this.x = x;
         this.y = y;
         this.z = z;
@@ -54,18 +56,18 @@ public class Computer extends GuiScreen {
         int j = (this.height - 166) / 2;
         this.buttonList.clear();
 
-        components.add(new FileBrowser(fileSystem, this, 0,0));
+        components.add(new FileBrowser(fileSystem, this, i + 25, j + 25));
 
-        type1 = this.addButton(new CustomButton(0, i, j, 150, 20, "Turn On", Color.green));
+        type1 = this.addButton(new CustomButton(0, i + 200, j, 150, 20, "Turn On", Color.green));
         type1.visible = true;
         type1.enabled = true;
-        type2 = this.addButton(new CustomButton(1, i, j + 25, 150, 20, "Shutdown", Color.red));
+        type2 = this.addButton(new CustomButton(1, i, j + 225, 150, 20, "Shutdown", Color.red));
         type2.visible = true;
         type2.enabled = true;
-        type3 = this.addButton(new CustomButton(2, i, j + 50, 150, 20, "Rebiit", new Color(0.0f, 0.5f, 0.0f)));
+        type3 = this.addButton(new CustomButton(2, i, j + 250, 150, 20, "Reboot", new Color(0.0f, 0.5f, 0.0f)));
         type3.visible = true;
         type3.enabled = true;
-        type3 = this.addButton(new CustomButton(3, i, j + 75, 150, 20, "Enter Computer", Color.green));
+        type3 = this.addButton(new CustomButton(3, i, j + 275, 150, 20, "Enter Computer", Color.green));
         type3.visible = true;
         type3.enabled = true;
 
@@ -103,9 +105,9 @@ public class Computer extends GuiScreen {
         type2.drawButton(mc, mouseX, mouseY);
         type3.drawButton(mc, mouseX, mouseY);
 
-        for(GuiComponent component : components){
+        for (GuiComponent component : components) {
 
-
+            component.render(this, 20, 20, partialTicks, mc);
 
         }
         GlStateManager.color(1.0F, 0.0F, 0.0F, 1.0F);
@@ -124,6 +126,8 @@ public class Computer extends GuiScreen {
         switch (button.id) {
             case 1:
                 mc.displayGuiScreen(null);
+                mc.thePlayer.addChatMessage(new TextComponentString(TextFormatting.AQUA + "[Elemental Meeps] " + TextFormatting.LIGHT_PURPLE + "Shutdown Computer."));
+
             default:
 
         }
